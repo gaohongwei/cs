@@ -1,13 +1,15 @@
-def bsearch(ar, target, start=0, stop=ar.length) 
+def bsearch(ar, target, start=0, stop=nil) 
+  stop ||= ar.length
   middle = (start + stop)/2
   puts "#{start}:#{stop} middle=#{middle}"
   return -1 if stop - start < 2  
+
   if ar[middle]  ==  target
     return middle
   elsif ar[middle]  <  target
-    bsearch(ar, target, middle, stop)
+    return bsearch(ar, target, middle, stop)
   else
-    bsearch(ar, target, start, middle)
+    return bsearch(ar, target, start, middle)
   end
 end
 
