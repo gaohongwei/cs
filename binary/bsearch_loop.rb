@@ -1,7 +1,7 @@
 def bsearch(ar, target, start=0, stop=ar.length) 
-  # recusive
   middle = (start + stop)/2
   puts "#{start}:#{stop} middle=#{middle}"
+  return -1 if stop - start < 2  
   if ar[middle]  ==  target
     return middle
   elsif ar[middle]  <  target
