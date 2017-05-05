@@ -16,20 +16,18 @@ end
 def bsearch(ar, target)
   start = 0
   stop = ar.length - 1
-  pivot=-1
-  while( start < stop)
+  while( (stop - start) > 1)
     pivot = (start + stop)/2
     puts "start=#{start} stop=#{stop}, pivot = #{pivot}"    
-    if ar[pivot] < target
-      start = pivot    
-    elsif ar[pivot] > target
+    if ar[pivot] == target
+      return pivot      
+    elsif ar[pivot] > target  
       stop = pivot
     else
-      return pivot
+      start = pivot  
     end
-    return -1 if stop - start < 2
   end
-  return pivot
+  return -1 
 end
 
 ar = (1..100).select{|x|x.even?}
