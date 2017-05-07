@@ -1,5 +1,4 @@
 https://gist.github.com/aspyct/3433278
-
 # Use additional space
 def msort(ar,start=0,stop=nil)
   stop||=ar.length-1
@@ -17,26 +16,31 @@ def merge(ar,start,pivot,stop)
   j=pivot+1
   out=[]
   puts "Before merge"
-  puts "i=#{i},j=#{j}"   
+  # puts "i=#{i},j=#{j} start=#{start} pivot=#{pivot} stop=#{stop}"
   puts ar[start..pivot].to_s
-  puts ar[(pivot+1)..stop].to_s  
+  puts ar[(pivot+1)..stop].to_s
   while(i<=pivot&&j<=stop)
     if ar[i] < ar[j]
       out << ar[i]
       i+=1
     else
-      out << ar[j]      
+      out << ar[j]
       j+=1
     end
   end
+  while(i<=pivot)
+    out << ar[i]
+    i+=1
+  end
+  while(j<=stop)
+    out << ar[j]
+    j+=1
+  end
   puts "After merge"
-  puts "i=#{i},j=#{j}"  
-  puts out.to_s  
+  # puts "i=#{i},j=#{j}"
+  puts out.to_s
   ar[start,(stop-start+1)] = out
 end
 
-
-ar=(1..5).to_a.shuffle
+ar=(1..10).to_a.shuffle
 msort(ar)
-
-
