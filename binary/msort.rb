@@ -39,7 +39,8 @@ def merge(ar,start,pivot,stop)
   puts "After merge"
   # puts "i=#{i},j=#{j}"
   puts out.to_s
-  ar[start,(stop-start+1)] = out
+  #ar[start,(stop-start+1)] = out
+  ar[start..stop] = out  
 end
 
 ar=(1..10).to_a.shuffle
