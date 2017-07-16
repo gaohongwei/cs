@@ -1,5 +1,3 @@
-
-1	Code Problem
 1.1	String
 1.1.1	28. Implement strStr()
 Implement strStr().
