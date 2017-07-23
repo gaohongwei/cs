@@ -1,4 +1,6 @@
-def count_say(s)
+# @param {Integer} n
+# @return {String}
+def count_say_one(s)
   len = s.length
   index = 0
   count = 0
@@ -17,13 +19,12 @@ def count_say(s)
   out += "#{count}#{target}"
   out
 end
-
-def count_say_loop(n)
+def count_and_say(n)
   s='1'
   puts s
-  (1..n).each do |index|
-    s= count_say(s)
+  return if n < 2
+  (2..n).each do |index|
+    s= count_say_one(s)
     puts s
   end
 end
-count_say_loop(5)
