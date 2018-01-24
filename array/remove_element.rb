@@ -1,51 +1,32 @@
-def remove_target(nums,target) # remove zero
-  len = nums.length
-  last = 0
-  nums.each do |num|
-    if num != target
-      nums[last] = num
-      last +=1
-    end
+def remove_target(ar, target)
+  last_index = 0
+  ar.each do |ele|
+    next if ele == target
+    ar[last_index] = ele
+    last_index +=1
   end
-  (last..(len-1)).each {|index| nums[index] = '*'}
+  (last_index..(ar.length - 1)).each {|index| ar[index] = '*'}
 end
 
-def remove_dup(nums) # for sorted
-  len = nums.length
-  last = 0
+def remove_duplicate(ar)
+  # on a sorted array
+  last_index = 0
   target = nil
-  nums.each do |num|
-    if num != target
-      target = num
-      nums[last] = num
-      last +=1
-    end
+  ar.each do |ele|
+    next if ele == target
+    target = ele
+    ar[last_index] = ele
+    last_index +=1
   end
-  (last..(len-1)).each {|index| nums[index] = '*'}
+  (last_index..(ar.length - 1)).each {|index| ar[index] = 'x'}
 end
 
 remove_dup is very simialr to remove_target
 The different is to assign a target
 ## test case
-nums = (1..10).to_a.shuffle
-target = 5
-remove_target(nums,target)
-nums
 
-nums =  [1,1,2,2,3,4,4,5,6,6]
-remove_dup(nums)
-nums
+ar = [0,1,0,3,4,2,0]
+remove_target(ar, 0)
 
-def remove_target2(nums,target) # remove zero
-  count =0
-  len = nums.length
-  nums.each_with_index do |num,index|
-    if num == target
-      count +=1
-    else
-      nums[index-count] = num
-    end
-  end
-  last = len - count # len - 1 - count +1
-  (last..(len-1)).each {|index| nums[index] = '0'}
-end
+ar = [1,1,1,2,3,3]
+remove_duplicate(ar)
