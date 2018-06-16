@@ -1,11 +1,11 @@
 function split_str(str){
-  var splitter = [\s,;]
+  var splitter = /[\s,;]/
   var start=-1, count=0
   var ch
   var words = []
   for(var index=0,len=str.length;index<len;index++){
     ch = str[index]
-    if( ch.match(/${splitter}/)){
+    if( splitter.test(ch)){
       if(count>0) words.push(str.substr(start+1,count))
       count =0
       start=index
