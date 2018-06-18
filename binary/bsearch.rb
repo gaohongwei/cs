@@ -18,21 +18,23 @@ def bsearch(ar, target, start=0, stop=nil)
   end
 end
 
-def bsearch(ar, target)
-  start = 0
-  stop = ar.length - 1
-  while( (stop - start) > 1)
-    pivot = (start + stop)/2
-    puts "start=#{start} stop=#{stop}, pivot = #{pivot}"    
-    if ar[pivot] == target
-      return pivot      
-    elsif ar[pivot] > target  
-      stop = pivot
+def bsearch(ar, target, start=0, stop=nil) 
+  stop ||= ar.length - 1
+
+  while((stop - start) > 1) 
+    mid = (start + stop)/2    
+    if ar[mid]  ==  target
+      return mid
+    elsif ar[mid]  <  target
+      start = mid
     else
-      start = pivot  
+      stop = mid
     end
   end
-  return -1 
+  # stop - start = 1
+  return stop if ar[stop] == target
+  return start if ar[start] == target  
+  return -1
 end
 
 ar = (1..100).select{|x|x.even?}
