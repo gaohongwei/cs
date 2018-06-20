@@ -11,6 +11,28 @@ Output: 5
 
 # @param {String} s
 # @return {Integer}
-def count_segments(s)
-    
+
+
+def count_segments(str)
+  words_count = 0
+  count = 0
+  str.each_char do |ch|
+    if ch.match(/[\s,;]/)
+      words_count += 1 if count > 0
+      count =0 
+    else
+      count += 1
+    end
+  end
+  words_count
 end
+
+
+strs = [
+"3 This is abc", 
+"3 This is    abc", 
+"3 This, is;;abc", 
+]
+
+
+strs.map{|str| count_segments(str) }
