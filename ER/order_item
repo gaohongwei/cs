@@ -1,6 +1,9 @@
   # Order Management
     Customer:  id, name, email
     Item:      id, name, price
-    Order:     id, customer_id, time, order_site
+    Order:     id, customer_id, amount, time, order_site
     OrderItem: order_id, item_id, count
   # Payment, Shipping
+    Address: state, city, address, customer_id
+    Shipping: status, order_id, address_id
+    Payment:  status, order_id, credit_card_id, amount(?)
