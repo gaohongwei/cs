@@ -1,3 +1,15 @@
 1NF
 2NF All non-primary attributes depend on primary key
 3NF No dependence between non-primary attributes
+
+Entity, How to find out
+  an nouns or a thing in the business description
+  exists independently 
+  physically or logically. 
+  can be uniquely identified
+
+  For example,
+    book: isbn, title, fname, lname
+    Book has authors(fname, lname) as attributes
+    But authors(fname, lname) exists independently of book
+    So authors shoud be an entity
