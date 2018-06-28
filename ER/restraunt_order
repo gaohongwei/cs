@@ -1,7 +1,8 @@
-  # Restraunt Order as a group
-    Menu: id, name, price
-    Table: id, name, size
-    Order: table_id, time, status(open:closed)
+  # Restraunt Order (as a group or individual)
+    Menu:   id, name, price
+    Table:  id, name, size
+    Server: id, name, last_name
+    Order: table_id, time, status(open:closed), server_id
     OrderItem: order_id, menu_id, count, customer_id
 
   If customers pay seperately, they will have different customer_id, 
