@@ -1,0 +1,12 @@
+  # Restraunt Order as a group
+    Menu: id, name, price
+    Table: id, name, size
+    Order: table_id, time, status(open:closed)
+    OrderItem: order_id, menu_id, count, customer_id
+
+  If customers pay seperately, they will have different customer_id, 
+  for example, 1 to 10 for each customer;
+  But customer_id is only temporarily represent each one, 
+  for example, by position
+    
+  Otherwise customer_id is the same within an order
