@@ -1,0 +1,130 @@
+Add Binary
+  Define a carry_over variable
+  loop thorugh the high end of both array
+  p1 = index1 < 0 ? 0 : ar1[index1]
+  p2 = index2 < 0 ? 0 : ar2[index2]
+  sum = p1 + p2 + carry
+Buddy Strings
+  loop through both  by index
+    next if same
+    diff[index] = [a1[index], ar2[index]]
+   
+Count and Say 
+  count = 0
+  prev = str[0]
+  for(ch of str)
+    if ch == prev_ch, count ++
+    else 
+      out += count
+      out += prev_ch
+      count = 0; 
+      prev_ch = ch       
+     
+Detect Capital
+  if (str.length < 2) return true
+  // now we have two char
+  // Valid: UU UD, DD, DU(x)
+  if(isUp[1] && !isUp[0]) return false
+  if(len == 2)  return true
+  From the 3rd ch, its status should be the same as previous, isUP[1]
+  for(index =2; index< len++; index)
+    if( isUp[index] != isUp[index-1]) return false
+  return true
+      
+First Unique Character in a String   
+  Define one hash, all_indexes[ch] ||= []
+    loop, push index
+    loop check the array size
+  Or define two hash with one loop
+    one hash keeps the indexes,  all_indexes[ch] ||= []
+    remove items form the other hash, uniq_indexes[ch] ||= [] if duplicates
+   
+Implement strStr(string, substr)  
+  loop by index of string
+  check substr eq
+  
+Judge Route Circle (UD, LR)
+  count = {}
+  return counts['U'] == counts['D'] && counts['L'] == counts['R']
+
+Length of Last Word   
+  count = 0
+  for(index=0; index<len; index++)
+    ch = str[index]
+    if (ch == ''){
+      word = str.substr(index - count + 1, count)
+    } else {
+      count++
+    }
+     
+Most Common Word 
+  counts = {}
+  identify each word by space
+     
+Number of Segments in a String    
+  identify each word by space
+  count the ch for non space
+
+Ransom Note, function canConstruct(ransomNote, charSets)
+  loop throgh charSets and count 
+  loop throgh ransomNote and count   
+  
+Reverse String   
+  loop 
+Reverse String II   
+  reverse string by position (from/to postion)
+Reverse Vowels of a String  
+  loop from left and right    
+Reverse Words in a String III    
+  identify each word by space
+  count the ch for non space
+  reverse string by position (from/to postion)
+
+Roman to Integer 
+  loop through string
+  add all occurence
+  deduct if
+   
+String Compression 
+  if( ch == prev_ch ) count++
+  else {
+    out.push(prev_ch)
+    out.push(count)      
+Student Attendance Record I   
+  count 
+  prev == ch ?
+   
+   
+Valid Palindrome 
+  loop on left and right pointer
+     
+Valid Palindrome II  
+  loop on left and right pointer
+  if str[left] != str[right] 
+    // skip one char  
+    palindrom(str, left+1, right) || palindrom(str, left, right-1)
+Valid Parentheses  
+  need to check count and order
+  stack   
+
+
+Redo
+  Construct String from Binary Tree    
+  Count Binary Substrings 
+  Longest Common Prefix  
+  Longest Uncommon Subsequence I   
+  Repeated String Match    
+  Repeated Substring Pattern  
+
+
+Not-done
+  Goat Latin 
+  Rotated Digits 
+
+Non-free 
+  Bold Words in String  
+  Flip Game
+  Read N Characters Given Read4   
+  Similar RGB Color   
+  Unique Morse Code Words 
+  Valid Word Abbreviation   
