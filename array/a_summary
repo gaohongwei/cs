@@ -1,0 +1,78 @@
+Best Time to Buy and Sell Stock  
+  
+Contains Duplicate  
+  nums.each do |num|  
+    return true if hash[num]
+    hash[num] = 1 
+  end
+Contains Duplicate II 
+  nums.each_with_index do |num, index|  
+    if hash[num].nil?
+      hash[num] = index 
+    else 
+      return true if index - hash[num] > k
+    end
+  end
+   
+Find All Numbers Disappeared in an Array  
+  hash = {}
+  nums.each do |num|
+    hash[num] ||=  0
+    hash[num] += 1
+  end 
+  out = [] 
+  (1..n).each do |index|
+    out << if hash[index].nil? 
+  end
+  out
+Majority Element 
+  solution 1: hash and count  
+
+Max Consecutive Ones 
+  Input: [1,1,0,1,1,1]
+  Output: 3
+  max = 0
+  count  =0 
+
+   
+Maximum Subarray    
+
+Move Zeroes  
+  index  =0 
+  target = 0
+  nums.each do |num|
+    next if num == target
+    nums[index] = num
+    index += 1
+  end
+  (index..(len-1)).each{|x|nums[x] = target}
+
+Pascal's Triangle    
+Pascal's Triangle II    
+Plus One   
+ 
+Remove Duplicates from Sorted Array   
+  index  = 1 # start with one, keep the first element
+  prev = nums[0] 
+  nums.each do |num|
+    if num == prev
+      next
+    else 
+      nums[index] = num
+      index += 1
+      prev = num
+    end
+  end
+ 
+Remove Element
+  index  =0 
+  nums.each do |num|
+    next if num == target
+    nums[index] = num
+    index += 1
+  end
+      
+Rotate Array    
+Third Maximum Number    
+Two Sum    
+Two Sum II - Input array is sorted   
