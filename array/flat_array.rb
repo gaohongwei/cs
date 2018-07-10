@@ -1,14 +1,14 @@
-def flatten_ar(items)
+def flatten_array(items)
   return [items] unless items.is_a?(Array)
   out = []
   items.each do |item|
-    out += flatten_ar(item)
+    out += flatten_array(item)
   end
   out
 end
 
 # use loop
-def flatten_ar(items)
+def flatten_array(items)
   out = []
   to_do = items.reverse
   puts 'array:',items.to_s
@@ -25,3 +25,7 @@ def flatten_ar(items)
   end
   out
 end
+
+  
+ar = [[1,100],[2,[20,[200,[2000,2001]]]] , [3, [30,[300,[3000,[3001,3002]]]]]]
+br =  flatten_array(ar)
