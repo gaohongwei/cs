@@ -1,8 +1,7 @@
-## Table of Contents
-
-Step 1. Intsall package
-  npm install
-Step 2: Run it
-  npm start
-Step 3: Visit the web
-  http://localhost:3000/
+## Steps
+### Intsall package ###
+    # npm install
+### Start the server ###
+    # npm start
+### Visit the web ###
+    # http://localhost:3000/
