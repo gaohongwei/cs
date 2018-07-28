@@ -1,4 +1,4 @@
-## Steps
+## React Steps
 ### Intsall package ###
     # npm install
 ### Start the server ###

@@ -4,15 +4,15 @@ end
 
 def tree_leaf(root)
   return [] if root.nil?
-  stack = [root]
+  queue = [root]
   out = []
-  while(stack.length > 0)
-    node = stack.pop
+  while(queue.length > 0)
+    node = queue.pop
     if node.left.nil? && node.right.nil? 
       out << node.val
     else 
-      stack << node.left  if node.left
-      stack << node.right if node.right      
+      queue << node.left  if node.left
+      queue << node.right if node.right      
     end
   end
   out
