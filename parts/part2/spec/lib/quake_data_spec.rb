@@ -1,0 +1,3 @@
+describe QuakeData do
+
+end

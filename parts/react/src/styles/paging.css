@@ -1,0 +1,23 @@
+.pagination ul {
+    display: inline-block;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.pagination li {
+    display: inline-block;
+    margin-left: 5px
+}
+
+.pagination .break a {
+    cursor: default;
+}
+
+.pagination  .active {
+  color: red;
+}
+
+
+.Select-control input {
+  width: 100% !important;;
+}

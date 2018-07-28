@@ -1,0 +1,12 @@
+source 'https://rubygems.org'
+
+gem 'faraday'
+
+group :test, :development do
+  gem 'byebug'
+  gem 'awesome_print'
+end
+
+group :test, :development do
+  gem 'rspec'
+end

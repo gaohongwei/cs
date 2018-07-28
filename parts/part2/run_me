@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+require_relative "./lib/argument"
+require_relative "./lib/quake_data"
+require "awesome_print"
+
+options = Argument.parse(ARGV)
+QuakeData.print_out(options)
