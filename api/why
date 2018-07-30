@@ -1,0 +1,9 @@
+
+REST API separates UI from the server
+and provides lot of bennifits
+and make UI and servers Independent 
+UI and servers can 
+  use different language, 
+  develope independently
+  use diffent servers
+  support scalability by adding additional server nodes behind a load balancer.
