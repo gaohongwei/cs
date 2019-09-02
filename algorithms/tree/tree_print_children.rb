@@ -1,14 +1,15 @@
 # node by id
-def node_by_id(nodes)
+def to_node_by_id(nodes)
    h ={}
    nodes.each do |node|
-      h[node[:id]] = node
+      id = node[:id]
+      h[id] = node
    end
    h
 end
 
 # Children by a node
-def nodes_by_pid(nodes)
+def to_ids_by_pid(nodes)
    h ={}
    nodes.each do |node|
       pid = node[:pid]
@@ -18,22 +19,21 @@ def nodes_by_pid(nodes)
    h
 end
 
-
 def print_node(node)
-   puts "id: #{node[:id]}, name: #{node[:name]}"
+   puts "id: #{node[:id]}, name: #{node[:name]}, pid: #{node[:pid]}"
 end
 
 def print_tree(nodes)
-   h_by_id = node_by_id(nodes)
-   h_by_pid = nodes_by_pid(nodes)
+   node_by_id = to_node_by_id(nodes)
+   ids_by_pid = to_ids_by_pid(nodes)
 
-   node_ids = h_by_pid[-1].sort.reverse
+   node_ids = ids_by_pid[-1].sort.reverse
    while ( node_ids.size > 0 )
       id = node_ids.pop
 
-      node = h_by_id[id]
+      node = node_by_id[id]
       print_node(node)
-      child_ids = h_by_pid[id]
+      child_ids = ids_by_pid[id]
       next if child_ids.nil? || child_ids.empty?
       node_ids += child_ids.sort.reverse
    end
