@@ -23,19 +23,31 @@ def print_node(node)
    puts "id: #{node[:id]}, name: #{node[:name]}, pid: #{node[:pid]}"
 end
 
-def print_tree(nodes)
+def get_tree_loop(nodes)
    node_by_id = to_node_by_id(nodes)
    ids_by_pid = to_ids_by_pid(nodes)
 
    node_ids = ids_by_pid[-1].sort.reverse
+   out = []
    while ( node_ids.size > 0 )
       id = node_ids.pop
 
-      node = node_by_id[id]
-      print_node(node)
+      node = node_by_id[id] 
+      #print_node(node)
+      out << node
       child_ids = ids_by_pid[id]
       next if child_ids.nil? || child_ids.empty?
       node_ids += child_ids.sort.reverse
+   end
+   puts 'Out:', out
+end
+
+def get_nodes_by_ids(ids)
+   return [] if nodes.nil? || nodes.empty?
+   out = []
+   ids.each do |id|
+      node = node_by_id[id]
+      out <<  node
    end
 end
 
@@ -77,4 +89,4 @@ nodes = [
    }
 ]
 
-print_tree(nodes)
+puts get_tree_loop(nodes)
