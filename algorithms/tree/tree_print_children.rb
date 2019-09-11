@@ -1,3 +1,18 @@
+# Node by id
+# Children by a node
+def to_hash_by_id_pid(nodes)
+   h_by_id = {}
+   h_by_pid = {}
+   nodes.each do |node|
+      id = node[:id]
+      pid = node[:pid]
+      h_by_id[id] =  node
+      h_by_pid[pid] ||= []
+      h_by_pid[pid] << id
+   end
+   [h_by_id, h_by_pids]
+end
+
 # node by id
 def to_node_by_id(nodes)
    h ={}
